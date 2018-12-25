@@ -2,8 +2,8 @@ package com.agharibi.persistence.service;
 
 import com.agharibi.interfaces.WithName;
 import com.agharibi.persistence.ServicePreconditions;
-import org.assertj.core.util.Lists;
-import org.assertj.core.util.Preconditions;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -14,6 +14,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Transactional
 public abstract class AbstractRawService<T extends WithName> implements RawService<T> {
@@ -39,8 +40,8 @@ public abstract class AbstractRawService<T extends WithName> implements RawServi
     @Override
     @Transactional(readOnly = true)
     public T findOne(long id) {
-        T entity = getDao().findOne(id);
-        return entity;
+        Optional<T> entity = getDao().findById(id);
+        return entity.orElse(null);
     }
 
     @Override
@@ -92,10 +93,10 @@ public abstract class AbstractRawService<T extends WithName> implements RawServi
 
     @Override
     public void delete(long id) {
-        T entity = getDao().findOne(id);
-        if(entity != null) {
+        final Optional<T> entity = getDao().findById(id);
+        if(entity.isPresent()) {
             ServicePreconditions.checkEntityExists(entity);
-            getDao().delete(entity);
+            getDao().delete(entity.get());
         }
     }
 
