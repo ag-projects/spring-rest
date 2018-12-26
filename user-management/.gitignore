@@ -3,6 +3,10 @@
 /Users/Armen/handson/spring-rest/user-management/common/target/*
 /Users/Armen/handson/spring-rest/user-management/umwebapp/target/*
 
+###### Package files  ##########
+*.jar
+*.war
+
 
 ### STS ###
 .apt_generated
