@@ -1,6 +1,8 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
-/target
+/Users/Armen/handson/spring-rest/user-management/common/target
+/Users/Armen/handson/spring-rest/user-management/umwebapp/target
+
 
 ### STS ###
 .apt_generated
