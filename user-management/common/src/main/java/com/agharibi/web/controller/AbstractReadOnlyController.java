@@ -4,7 +4,7 @@ import com.agharibi.interfaces.WithName;
 import com.agharibi.persistence.service.RawService;
 import com.agharibi.web.RestPreconditions;
 import com.agharibi.web.exception.MyResourceNotFoundException;
-import org.assertj.core.util.Lists;
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;

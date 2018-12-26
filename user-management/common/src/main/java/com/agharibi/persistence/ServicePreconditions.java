@@ -1,6 +1,7 @@
 package com.agharibi.persistence;
 
 import com.agharibi.persistence.exception.MyEntityNotFoundException;
+import com.agharibi.web.exception.MyBadRequestException;
 
 public final class ServicePreconditions {
 
