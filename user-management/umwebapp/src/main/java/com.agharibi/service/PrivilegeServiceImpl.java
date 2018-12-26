@@ -13,7 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class PrivilegeServiceImpl extends AbstractService<Privilege> implements PrivilegeService {
 
     @Autowired
-    private PrivilegeJpaDao privilegeJpaDao;
+    private PrivilegeJpaDao dao;
+
+    public void setDao(PrivilegeJpaDao dao) {
+        this.dao = dao;
+    }
 
     public PrivilegeServiceImpl() {
     }
@@ -25,11 +29,11 @@ public class PrivilegeServiceImpl extends AbstractService<Privilege> implements 
 
     @Override
     protected PrivilegeJpaDao getDao() {
-        return this.privilegeJpaDao;
+        return this.dao;
     }
 
     @Override
     protected JpaSpecificationExecutor<Privilege> getSpecificationExecutor() {
-        return this.privilegeJpaDao;
+        return this.dao;
     }
 }

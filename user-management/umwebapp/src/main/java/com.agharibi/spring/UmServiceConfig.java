@@ -4,7 +4,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.agharibi")
+@ComponentScan("com.agharibi.service")
 public class UmServiceConfig {
 
     public UmServiceConfig() {
