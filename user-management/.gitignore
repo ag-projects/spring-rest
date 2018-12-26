@@ -1,7 +1,7 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
-/Users/Armen/handson/spring-rest/user-management/common/target
-/Users/Armen/handson/spring-rest/user-management/umwebapp/target
+/Users/Armen/handson/spring-rest/user-management/common/target/*
+/Users/Armen/handson/spring-rest/user-management/umwebapp/target/*
 
 
 ### STS ###
