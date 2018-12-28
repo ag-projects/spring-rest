@@ -15,13 +15,10 @@ import org.springframework.context.annotation.Import;
 })
 public class UmApp {
 
-
-
     public static void main(String[] args) {
         new SpringApplicationBuilder(UmApp.class)
                 .initializers(new MyApplicationContextInitializer())
                 .listeners()
                 .run(args);
-
     }
 }
