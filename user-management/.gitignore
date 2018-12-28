@@ -34,3 +34,13 @@ user-management/common/target/
 /dist/
 /nbdist/
 /.nb-gradle/
+
+
+*.class
+
+#folders#
+/target
+/neoDb*
+/data
+/src/main/webapp/WEB-INF/classes
+*/META-INF/*

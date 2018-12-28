@@ -2,10 +2,11 @@ package com.agharibi.spring;
 
 import com.agharibi.persistence.setup.MyApplicationContextInitializer;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Import;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
 @Import({
         UmContextConfig.class,
         UmPersistenceJpaConfig.class,
