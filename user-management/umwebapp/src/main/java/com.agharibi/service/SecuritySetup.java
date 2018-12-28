@@ -37,7 +37,16 @@ public class SecuritySetup implements ApplicationListener<ContextRefreshedEvent>
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+        if (!setupDone) {
+            logger.info("Executing Setup");
 
+            createPrivileges();
+            createRoles();
+            createUsers();
+
+            setupDone = true;
+            logger.info("Setup Done");
+        }
     }
 
     private void createPrivileges() {
@@ -87,7 +96,7 @@ public class SecuritySetup implements ApplicationListener<ContextRefreshedEvent>
         }
     }
 
-    final void createUserss() {
+    final void createUsers() {
         final Role roleAdmin = roleService.findByName(Roles.ROLE_ADMIN);
 
         // createUserIfNotExisting(SecurityConstants.ADMIN_USERNAME, SecurityConstants.ADMIN_PASS, Sets.<Role> newHashSet(roleAdmin));
