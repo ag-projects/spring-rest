@@ -84,6 +84,7 @@
 	<modules>
 		<module>common</module>
 		<module>umwebapp</module>
+		<module>um-ui</module>
 	</modules>
 
 </project>
