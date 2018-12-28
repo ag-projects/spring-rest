@@ -3,9 +3,9 @@
 /Users/Armen/handson/spring-rest/user-management/common/target/*
 /Users/Armen/handson/spring-rest/user-management/umwebapp/target/*
 
-/user-management/umwebapp/target
-user-management/umwebapp/target/
-user-management/common/target/
+/user-management/umwebapp/target/*.class
+user-management/umwebapp/target/*.class
+user-management/common/target/*.class
 
 ###### Package files  ##########
 *.jar
