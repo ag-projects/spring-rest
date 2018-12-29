@@ -70,6 +70,7 @@ public class RoleController extends AbstractController<Role> implements SortingC
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
+    @CrossOrigin(origins = "*")
     public Role findOne(@PathVariable("id") final Long id) {
         return findOneInternal(id);
     }
